@@ -7,4 +7,4 @@
         {{ $listing['description'] }}
     </p>
 @endforeach
-{{-- note that there's even a php directive --}}
+{{-- note that there's even a php directive,an if directive, unless directive etc --}}

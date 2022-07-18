@@ -35,7 +35,7 @@ class Listing extends Model
     }
 
     public static function find($id){
-        $listings = self::all();//we can use self this way when the function or property to be called is in the same static class
+        $listings = self::allListings();//we can use self this way when the function or property to be called is in the same static class
         foreach($listings as $listing){
             if($listing['id']==$id){
                 return $listing;

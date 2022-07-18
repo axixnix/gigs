@@ -24,9 +24,8 @@ Route::get('/', function () {
 });
 
 //Single listing
-Route::post('/{id}',function(){
-    return view('listings',[
-        'heading' => 'listing',
-        'listings' => Listing::find(${'id'})
+Route::get('listing/{id}',function($id){//thought this would be a post method since we are passing a variable
+    return view('listing',[
+        'listing' => Listing::find($id)
     ]);
 });

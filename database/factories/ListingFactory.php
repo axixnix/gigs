@@ -18,7 +18,7 @@ class ListingFactory extends Factory
     {
         return [
             //
-            'title'=>$this->faker->sentence(),//faker is just a class that provides dummy text
+            'title'=>$this->faker->sentence(),//faker is just a library that provides dummy text
             'tags'=> 'laravel,javascript',
             'company'=> $this->faker->company(),
             'location'=> $this->faker->city(),

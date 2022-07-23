@@ -9,7 +9,7 @@ class Listing extends Model
 {
     use HasFactory;
 
-    public static function allListings(){
+   /*  public static function allListings(){
         return [
             [
                 'id' => 1,
@@ -44,4 +44,4 @@ class Listing extends Model
         }
 
     }
-}
+ */}

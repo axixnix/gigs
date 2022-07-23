@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('listings', [
         'heading' => 'latest listings',
-        'listings' => Listing::allListings()
+        'listings' =>Listing::all()// was formerly 'listings' => Listing::allListings() and worked with the commented code in the Listing model
     ]);
 });
 

@@ -14,11 +14,11 @@ class ListingFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition()//to get this factory template do: php artisan  make:Factory ListingsFactory
     {
         return [
             //
-            'title'=>$this->faker->sentence(),
+            'title'=>$this->faker->sentence(),//faker is just a class that provides dummy text
             'tags'=> 'laravel,javascript',
             'company'=> $this->faker->company(),
             'location'=> $this->faker->city(),

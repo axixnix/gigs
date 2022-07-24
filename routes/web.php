@@ -23,9 +23,40 @@ Route::get('/', function () {
     ]);
 });
 
+
+
 //Single listing
-Route::get('/listings/{id}',function($id){//thought this would be a post method since we are passing a variable
-    return view('listing',[
-        'listing' => Listing::find($id)
-    ]);
+// Route::get('/listings/{id}',function($id){//thought this would be a post method since we are passing a variable
+//     return view('listing',[
+//         'listing' => Listing::find($id)
+//     ]);
+// });
+
+// Route::get('/listings/{id}',function($id){//thought this would be a post method since we are passing a variable
+//     $listing =Listing::find($id);
+
+//     if($listing){
+//         return view('listing',[
+//             'listing' => $listing
+//         ]);
+
+//     }else{
+//         abort('404');
+//     }
+
+
+// });
+
+//single listing
+Route::get('/listings/{listing}',function( Listing $listing){//thought this would be a post method since we are passing a variable
+
+
+
+        return view('listing',[
+            'listing' => $listing
+        ]);//this is route model binding, and unlike above, I don't have to do the if check ...the abort functionality is inbuilt
+
+
+
+
 });

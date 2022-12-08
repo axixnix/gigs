@@ -18,14 +18,21 @@ use Illuminate\Support\Facades\Route;
 //All listings
 Route::get('/', function () {
     return view('listings', [
-        'heading' => 'latest listings',
-        'listings' =>Listing::all()// was formerly 'listings' => Listing::allListings() and worked with the commented code in the Listing model
-    ]);
+        'listings' =>Listing::all()]);// was formerly 'listings' => Listing::allListings() and worked with the commented code in the Listing model
+
 });
 
 //Single listing
-Route::get('/listings/{id}',function($id){//thought this would be a post method since we are passing a variable
+/*Route::get('/listings/{id}',function($id){//thought this would be a post method since we are passing a variable
     return view('listing',[
         'listing' => Listing::find($id)
+    ]);
+});*/
+
+
+//Single listing...route model binding
+Route::get('/listings/{listing}',function(Listing $listing){//thought this would be a post method since we are passing a variable
+    return view('listing',[
+        'listing' => $listing
     ]);
 });

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ListingController;
 use App\Models\Listing;
 use Illuminate\Support\Facades\Route;
 
@@ -16,11 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //All listings
-Route::get('/', function () {
-    return view('listings', [
-        'listings' =>Listing::all()]);// was formerly 'listings' => Listing::allListings() and worked with the commented code in the Listing model
-
-});
+Route::get('/', [ListingController::class,'index']);
 
 //Single listing
 /*Route::get('/listings/{id}',function($id){//thought this would be a post method since we are passing a variable
@@ -31,8 +28,4 @@ Route::get('/', function () {
 
 
 //Single listing...route model binding
-Route::get('/listings/{listing}',function(Listing $listing){//thought this would be a post method since we are passing a variable
-    return view('listing',[
-        'listing' => $listing
-    ]);
-});
+Route::get('/listings/{listing}',[ListingController::class,'show']);

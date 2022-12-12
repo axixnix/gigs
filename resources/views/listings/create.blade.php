@@ -10,6 +10,7 @@
                     </header>
 
                     <form method="POST" action="/listings">
+                        @csrf
                         <div class="mb-6">
                             <label
                                 for="company"

@@ -12,7 +12,7 @@ class ListingController extends Controller
     //all listings
     public function index(){
         return view('listings.index', [
-            'listings' =>Listing::all()]);// was formerly 'listings' => Listing::allListings() and worked with the commented code in the Listing model
+            'listings' =>Listing::latest()->filter(request(['tag']))->get()]);// was formerly 'listings' => Listing::allListings() and worked with the commented code in the Listing model, listings::all() will return the listings unsorted
 
 
     }

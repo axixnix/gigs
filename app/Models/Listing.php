@@ -44,4 +44,15 @@ class Listing extends Model
         }
 
     }
- */}
+ */
+    public function scopeFilter($query, array $filters)
+    {
+        # code...
+        if($filters['tag'] ?? false){
+            $query->where('tags','like','%'.request('tag').'%');
+        }
+    }
+
+
+
+}

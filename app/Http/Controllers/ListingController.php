@@ -11,7 +11,7 @@ class ListingController extends Controller
 
     //all listings
     public function index(){
-        return view('listings', [
+        return view('listings.index', [
             'listings' =>Listing::all()]);// was formerly 'listings' => Listing::allListings() and worked with the commented code in the Listing model
 
 
@@ -19,7 +19,7 @@ class ListingController extends Controller
 
     //single listing
     public function show(Listing $listing){
-        return view('listing',[
+        return view('listing.show',[
             'listing' => $listing
         ]);
 

@@ -1,8 +1,5 @@
 {{-- the line below connects this view to the layout view --}}
-@extends('layout')
-{{-- content here will be supplied to the yield directive in the layout view, in order to be displayed there --}}
-
-@section('content')
+<x-layout>
 @include('partials._search')
 <a href="/" class="inline-block text-black ml-4 mb-4"
 ><i class="fa-solid fa-arrow-left"></i> Back
@@ -48,4 +45,4 @@
     </div>
 </x-card>
 </div>
-@endsection
+</x-layout>

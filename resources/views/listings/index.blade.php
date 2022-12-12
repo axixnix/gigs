@@ -1,8 +1,4 @@
-{{-- the line below connects this view to the layout view --}}
-@extends('layout')
-{{-- content here will be supplied to the yield directive in the layout view, in order to be displayed there --}}
-@section('content')
-{{--<h1>{{ $heading }}</h1> --}}
+<x-layout>
 @php
 
             //dd($listings);
@@ -52,6 +48,6 @@ class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4"
 
 </div>
 
-@endsection
+</x-layout>
 
 {{-- note that there's even a php directive,an if directive, unless directive etc --}}

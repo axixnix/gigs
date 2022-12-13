@@ -32,6 +32,9 @@ Route::get('/', [ListingController::class,'index']);
 //show create form
 Route::get('/listings/create', [ListingController::class,'create']);
 
+//store listing data
+Route::post('/listings', [ListingController::class,'store']);
+
 
 //Single listing...route model binding
 Route::get('/listings/{listing}',[ListingController::class,'show']);//had to move this down as it was interfering with the create route, probably due to the wildcard

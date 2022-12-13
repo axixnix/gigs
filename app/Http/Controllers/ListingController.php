@@ -15,7 +15,7 @@ class ListingController extends Controller
     //all listings
     public function index(){
         return view('listings.index', [
-            'listings' =>Listing::latest()->filter(request(['tag','search']))->get()]);// was formerly 'listings' => Listing::allListings() and worked with the commented code in the Listing model, listings::all() will return the listings unsorted
+            'listings' =>Listing::latest()->filter(request(['tag','search']))->paginate(3)]);// was formerly 'listings' => Listing::allListings() and worked with the commented code in the Listing model, listings::all() will return the listings unsorted
 
 
     }

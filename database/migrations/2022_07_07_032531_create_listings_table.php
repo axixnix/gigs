@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('listings', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('logo')->nullable();//we store the path to the file in our db...not the actual file
             $table->string('tags');
             $table->string('company');
             $table->string('location');

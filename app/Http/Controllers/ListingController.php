@@ -22,7 +22,7 @@ class ListingController extends Controller
 
     //single listing
     public function show(Listing $listing){
-        return view('listing.show',[
+        return view('listings.show',[
             'listing' => $listing
         ]);
 
@@ -53,5 +53,10 @@ class ListingController extends Controller
         //Session::flash('success','listing created');
 
         return redirect('/')->with('message','new listing added successfuly');
+    }
+
+    //show Edit Form
+    public function edit(Listing $listing){
+        return view('listings.edit',['listing'=>$listing]);
     }
 }

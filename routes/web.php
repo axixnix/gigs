@@ -16,6 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
+ common resource routes
+index - Show all listings
+show -Show single listing
+create - Show form to create a new listing
+store -Store new listing
+edit - Show form to edit listing
+update - Update listing
+destroy -Delete listing
+*/
+
 //All Listings
 Route::get('/', [ListingController::class,'index']);
 
@@ -37,6 +48,13 @@ Route::post('/listings', [ListingController::class,'store']);
 
 //show Edit Form...another example of route model binding
 Route::get('/listings/{listing}/edit', [ListingController::class,'edit']);
+
+//Edit Submit to Update
+Route::put('/listings/{listing}', [ListingController::class,'update']);
+
+//Delete  Listing
+Route::delete('/listings/{listing}', [ListingController::class,'destroy']);
+
 
 
 //Single Listing...route model binding

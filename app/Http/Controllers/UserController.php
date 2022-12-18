@@ -36,5 +36,13 @@ class UserController extends Controller
 
     }
 
+    public function logout(Request $request){
+      auth()->logout();
+      $request->session()->invalidate();
+      $request->session()->regenerateToken();//regenerates the csrf token
+
+      return redirect('/')->with('message','you have been logged out !');
+    }
+
 
 }

@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('listings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');//this column is required for creating relationships,cascade will delete all listings associated with a user if the user is deleted
             $table->string('title');
             $table->string('logo')->nullable();//we store the path to the file in our db...not the actual file
             $table->string('tags');

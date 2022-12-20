@@ -56,7 +56,8 @@ Route::put('/listings/{listing}', [ListingController::class,'update'])->middlewa
 //Delete  Listing
 Route::delete('/listings/{listing}', [ListingController::class,'destroy'])->middleware('auth');
 
-
+//Manage Listings
+Route::get('/listings/manage',[ListingController::class,'manage'])->middleware('auth');
 
 //Single Listing...route model binding
 Route::get('/listings/{listing}',[ListingController::class,'show']);//had to move this down as it was interfering with the create route, probably due to the wildcard

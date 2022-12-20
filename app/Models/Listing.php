@@ -63,5 +63,13 @@ class Listing extends Model
     }
 
 
+    //Relationship To User
+    public function user()
+    {
+        # code...
+       return $this->belongsTo(User::class,'user_id');//since we used the default name for the foreignId we don't have specify it here,$this->belongsTo(User::class,'name_of_foreignId_field'); is the pattern
+    }
+
+
 
 }

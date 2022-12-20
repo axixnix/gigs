@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use App\Models\Listing;
+use Illuminate\Database\Seeder;
 use Database\Factories\ListingsFactory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,8 +17,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         \App\Models\User::factory(8)->create();
-         Listing::factory(5)->create();//this is how the ListingFactory I created is called
+        // \App\Models\User::factory(8)->create();
+
+        $user = User::factory()->create([
+            'name'=> 'Leo Messi',
+            'email'=>"worldcup@qatar.com"
+        ]);
+         Listing::factory(5)->create(['user_id'=>$user->id]);//this is how the ListingFactory I created is called
         //  Listing::create([
         //      'title'=> 'laravel senior developer',
         //      'tags'=> 'laravel,javascript',
